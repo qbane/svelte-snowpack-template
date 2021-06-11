@@ -1,0 +1,12 @@
+html, body { box-sizing: border-box; }
+* { box-sizing: inherit; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+}
