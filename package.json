@@ -18,6 +18,7 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.0",
     "@snowpack/plugin-svelte": "^3.7.0",
+    "csso": "^4.2.0",
     "rollup": "^2.51.2",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-css-only": "^3.1.0",

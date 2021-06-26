@@ -1,5 +1,7 @@
 import fs from 'fs'
+import path from 'path'
 
+import csso from 'csso'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import json from '@rollup/plugin-json'
@@ -12,6 +14,15 @@ import css from 'rollup-plugin-css-only'
 const OUT_DIR = 'build'
 // NOTE: PRODUCTION BY DEFAULT!
 const PROD = (process.env.NODE_ENV !== 'development')
+
+function minifyCss(_path, options) {
+  const absPath = path.resolve(_path)
+  const css = fs.readFileSync(absPath, 'utf-8')
+  return csso.minify(css, {
+    ...(options || {}),
+    filename: absPath,
+  })
+}
 
 const commonConfig = {
   input: 'src/main.js',
@@ -35,7 +46,11 @@ const commonConfig = {
     }),
     css({
       output(styles) {
-        fs.appendFileSync(`${OUT_DIR}/global.css`, styles)
+        const filename = `${OUT_DIR}/global.css`
+        const globalCss = minifyCss(filename, {
+          sourceMap: !PROD,
+        })
+        fs.writeFileSync(filename, [globalCss.css, styles].join('\n'))
       },
     }),
     json(),
