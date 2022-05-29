@@ -2,7 +2,7 @@
 
 Sadly, [Snowpack is no longer actively maintained](https://github.com/FredKSchott/snowpack#readme). I will re-evaluate my toolset around Svelte and reinitiate a template as another repo.
 
-# qbane's Svelte Template
+# qbane's Svelte Template (for Snowpack)
 
 Personal project template powered by Svelte+α.
 
@@ -13,7 +13,7 @@ Personal project template powered by Svelte+α.
 Quick scaffolding command:
 
 ```
-npx degit qbane/svelte-template svelte-app
+npx degit qbane/svelte-snowpack-template svelte-app
 ```
 
 Tested manually with **Node 12**.
