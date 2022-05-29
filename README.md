@@ -1,3 +1,7 @@
+# !! ARCHIVED !!
+
+Sadly, [Snowpack is no longer actively maintained](https://github.com/FredKSchott/snowpack#readme). I will re-evaluate my toolset around Svelte and reinitiate a template as another repo.
+
 # qbane's Svelte Template
 
 Personal project template powered by Svelte+α.
